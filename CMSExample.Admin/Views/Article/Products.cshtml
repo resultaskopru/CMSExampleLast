@@ -1,0 +1,40 @@
+﻿@{
+    ViewData["Title"] = "Products";
+}
+
+<h2>Articles</h2>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Article ID</th>
+            <th>Name</th>
+            <th>Stock</th>
+            <th>Price</th>
+            <th>Image</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <div class="form-group">
+        <label for="ImageUrl">Image URL</label>
+        <input type="text" class="form-control" id="ImageUrl" name="ImageUrl" required />
+    </div>
+    <div class="form-group">
+        <label for="Description">Description</label>
+        <textarea class="form-control" id="Description" name="Description" required></textarea>
+    </div>
+    <tbody>
+        @foreach (var product in Model)
+        {
+            <tr>
+                <td>@product.Id</td>
+                <td>@product.Name</td>
+                <td>@product.Stock</td>
+                <td>@product.Price</td>
+                <td><img src="@product.ImageUrl" alt="@product.Name" style="width: 100px; height: auto;" /></td>
+                <td>@product.Description</td>
+                <td>
+
+            </tr>
+        }
+    </tbody>
+</table>

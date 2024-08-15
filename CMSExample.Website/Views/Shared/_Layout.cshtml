@@ -1,0 +1,112 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewData["Title"] - Product Management</title>
+    <link rel="stylesheet" href="~/css/site.css" />
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Open Sans', sans-serif;
+            line-height: 1.6;
+            background-color: #f0f0f0;
+            overflow-x: hidden;
+        }
+
+        #sidebar {
+            background: #343a40;
+            color: white;
+            height: 96.1vh;
+            width: 325px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-top: 20px;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+        }
+
+            #sidebar .logo {
+                margin-bottom: 50px;
+            }
+
+                #sidebar .logo img {
+                    max-width: 150px;
+                    height: auto;
+                    border-radius: 50%;
+                    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+                }
+
+            #sidebar .nav {
+                list-style-type: none;
+                padding: 0;
+                margin: 0;
+                width: 100%;
+            }
+
+            #sidebar .nav-item {
+                width: 100%;
+            }
+
+                #sidebar .nav-item a {
+                    display: block;
+                    padding: 15px 20px;
+                    color: white;
+                    text-decoration: none;
+                    font-size: 1.1rem;
+                    transition: background-color 0.3s ease;
+                }
+
+                    #sidebar .nav-item a:hover, #sidebar .nav-item a.active {
+                        background-color: #F59E0B;
+                    }
+
+        
+        .custom-main {
+            margin-left: 200px;
+            padding: 0px;
+        }
+
+        
+        h1 {
+            font-size: 2rem;
+            color: #2c3e50;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #e74c3c;
+            padding-bottom: 10px;
+        }
+
+        p {
+            color: #7f8c8d;
+            font-size: 1.1rem;
+        }
+    </style>
+</head>
+<body>
+    <div id="sidebar">
+        <div class="logo">
+            <a href="@Url.Action("Index", "Home")">
+                <img src="~/lib/28267842_7.jpg" alt="Logo">
+            </a>
+        </div>
+        <ul class="nav flex-column">
+            <li class="nav-item">
+                <a class="nav-link" href="@Url.Action("Index", "Home")">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="@Url.Action("Index", "Product")">Product</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="@Url.Action("Index", "Article")">Articles</a>
+            </li>
+        </ul>
+    </div>
+    <div class="custom-main">
+        @RenderBody()
+    </div>
+</body>
+</html>
